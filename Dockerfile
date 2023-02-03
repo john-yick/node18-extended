@@ -30,7 +30,7 @@ RUN apk add --no-cache msttcorefonts-installer fontconfig
 RUN update-ms-fonts
 
 #Google fonts
-RUN wget -q https://fs.demo-portal.com:12345/public/fonts-main.tar.gz -O gf.tar.gz && \
+RUN wget -q https://github.com/google/fonts/archive/main.tar.gz -O gf.tar.gz && \
     tar -xf gf.tar.gz && \
     mkdir -p /usr/share/fonts/truetype/google-fonts && \
     find $PWD/fonts-main/ -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/google-fonts/ \; || return 1 && \
