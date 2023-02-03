@@ -9,13 +9,6 @@ RUN  echo 'http://mirrors.ustc.edu.cn/alpine/v3.15/main' > /etc/apk/repositories
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \ 
     && echo "Asia/Shanghai" > /etc/timezone
 
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
-# Bundle app source
-COPY . /usr/src/app
-
 # Node Canvas
 RUN apk add --allow-untrusted make g++ cairo-dev libjpeg-turbo-dev pango-dev giflib-dev
 
